@@ -1,0 +1,22 @@
+{%extends "header.html"%}
+
+{%block body%}
+
+<body>
+<div class="container-fluid" style="width:800px" >
+  <center>
+
+      <h1> Log-in </h1><br>
+      <form action="/data/" method="post"   role="form">
+          <label for="username">Username:</label>
+          <input type="text"  class="form-control" id="username"  name="username"
+           value="{{request.form.username}}">
+          <label for="password">Password:</label>
+          <input type="password" class="form-control" id="password" name="password"
+           value="{{request.form.password}}"><br>
+          <input class="btn btn-default" type="submit" value="Login">
+      </form>
+  </center>
+</div>
+</body>
+{%endblock%}

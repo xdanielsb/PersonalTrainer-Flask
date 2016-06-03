@@ -1,0 +1,5 @@
+1.Tomar impulso y llegar a posicion de carrito.
+2.Inclinar el cuerpo de acuerdo al lado donde se gira.
+3.Adelantar un poco el pie del costado donde se gira..
+4.Intercambiar pie y sentido del giro.
+5.Repetir.

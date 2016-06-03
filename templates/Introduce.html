@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- {{url_for('static',filename='')}} -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Personal Training Work</title>
+    <link href="{{url_for('static',filename='fonts/customFonts')}}" rel="stylesheet" type="text/css">
+    <link rel="icon" href="{{url_for('static',filename='img/favicon.ico')}}">
+	<link href="{{url_for('static',filename='css/bootstrap.min.css')}}" rel="stylesheet">
+	
+</head>
+
+<body >
+	<center>
+		<button type="button" class="btn btn-default" aria-haspopup="true" aria-expanded="false">	
+   			<a href="/data/"   role="button" >Continuar</a> <span class="caret"></span>
+	    </button> 
+		<img src="{{url_for('static',filename='img/Page1.jpg')}}" alt="" class="img-responsive">
+	</center>
+</body>
+
+</html>

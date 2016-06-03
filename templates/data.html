@@ -1,0 +1,83 @@
+{%extends "header.html"%}
+
+{%block body%}
+<script>
+  function calcIMC(){
+
+    var campoIMC = document.getElementById('IMC')
+    var estatura = +document.getElementById('Estatura').value
+    var peso = +document.getElementById('Peso').value
+    campoIMC.value=peso/(estatura*estatura)*10000
+  }
+</script>
+
+
+<center>
+<div class="container-fluid" style="width:80%" >
+    <h1> Diagnostico </h1><br>
+    <form class="form-horizontal" role="form" action="/processData/" method="post">
+    <div >
+
+    <div class="panel panel-info">
+      <div class="panel-body">Datos Personales</div>
+      <div class="panel-footer">
+	   <!--  <label for="Nombre"  class="list-inline">Nombre:</label>  -->
+	      <input type="text"  class="form-control "  name="Nombre"  placeholder="Nombre">
+
+	  <!--    <label for="Edad">Edad:</label>  -->
+	      <input type="text" class="form-control"  name="Edad" placeholder="Edad">
+
+	  <!--    <label for="Peso">Peso:</label> -->
+	      <input type="text" class="form-control" name="Peso"  id="Peso" placeholder="Peso">
+
+	  <!--    <label for="Estatura">Estatura:</label> -->
+	      <input type="text" class="form-control" name="Estatura" id="Estatura"  placeholder="Estatura" onchange="calcIMC()">
+
+	      <!-- <label for="IMC">IMC:</label> -->
+	      <input type="hidden" class="form-control" name="IMC" id="IMC" readonly >
+
+	    <!--  <label for="ICC">ICC:</label> -->
+	      <input type="text" class="form-control" name="ICC" placeholder="ICC">
+
+	  <!--    <label for="Observaciones">Observaciones:</label> -->
+	      <textarea class="form-control" rows="5" id="Observaciones" name="Observaciones" placeholder="Observaciones"></textarea>
+       </div>
+	
+	<div class="panel panel-info">
+	  <div class="panel-body">Frecuencias</div>
+
+	  <div class="panel-footer">
+
+	 <!--    <label for="frecuenciaCardiacar">FC en Reposo: </label> -->
+	      <input type="text" class="form-control" id="FC_en_Reposo" name="FC_en_Reposo" placeholder="Frecuencia en Reposo">
+
+	  <!--    <label for="frecuenciaCardiacaa">FC en Activacion:</label> -->
+	      <input type="text" class="form-control" id="FC_en_Activacion" name="FC_en_Activacion" placeholder="Frecuencia en Activacion">
+
+	<!--      <label for="frecuenciaCardiacac">FC Central:</label> -->
+	      <input type="text" class="form-control" id="FC_Central" name="frecuenciaCardiacac" placeholder="Frecuencua Central">
+
+	<!--      <label for="frecuenciaCardiacare">FC en Recuperacion:</label> -->
+	      <input type="text" class="form-control" id="FC_en_Recuperacion"  name="FC_en_Recuperacion" placeholder="Frecuencia en Recuperacion">
+
+
+
+	  </div>
+	</div>
+    </div>
+    <!--    <label for="pde">Percepcion del esfuerzo:</label> -->
+      <select class="form-control" id="pde" name="pde" id="pde">
+        <option>Percepcion del esfuerzo</option>
+        {%for i in range(0, 11):%}
+          <option>{{i}}</option>
+        {%endfor%}
+      </select>
+      <br>
+      <button type="submit" class="btn btn-default" aria-label="Left Align">
+          <span class="glyphicon glyphicon-align-left" aria-hidden="true">Enviar</span>
+      </button>
+    </form>
+    </div>
+</div>
+</center>
+{%endblock%}

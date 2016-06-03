@@ -1,0 +1,6 @@
+1. Calentamiento
+2. Frenado en T
+3. Hacia atras
+4. Braceo
+5. Empuje lateral
+

@@ -1,0 +1,5 @@
+1.Desplazamiento en linea recta
+2.Trasladar el peso corporal a un solo patin 
+3.Levantar el pie contrario 
+4.Cambiar de pie
+5.Repetir el ejercicio

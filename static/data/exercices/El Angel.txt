@@ -1,0 +1,4 @@
+1.Desplazarse hacia adelante en linea recta
+2.Inclinar el tronco hacia adelante
+3.Elevacion de pierna hacia atras
+4.Formar una linea recta con la cabeza y el talon del pie elevado

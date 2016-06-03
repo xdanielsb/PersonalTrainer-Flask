@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- {{url_for('static',filename='')}} -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Personal Training Work</title>
+    <link href="{{url_for('static',filename='css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename='css/stylish-portfolio.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename='font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{url_for('static',filename='fonts/customFonts')}}" rel="stylesheet" type="text/css">
+    <link rel="icon" href="{{url_for('static',filename='img/favicon.ico')}}">
+
+</head>
+
+<body>
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars">.</i></a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li><a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times">.</i></a></li>
+            <li class="sidebar-brand">
+              <!-- &raquo  This mean >> -->
+                 {%if 'username' in session%}
+					
+                  <a href="#"  id="name" onclick = $("#menu-close").click();> {{session['username']}}</a>
+                {%endif%}
+            </li>
+	    <!--        <li>
+                <a href="/data/" onclick = $("#menu-close").click(); >Data</a>
+            </li>  -->
+	    <li>
+                <a href="/warm_up/" onclick = $("#menu-close").click(); >Calentamiento</a>
+            </li>
+            <li>
+                <a href="/exercices/" onclick = $("#menu-close").click(); >Ejercicios</a>
+            </li>
+            <li>
+                <a href="/levels/" onclick = $("#menu-close").click(); >Niveles</a>
+            </li>
+            <li>
+                <a href="/logout/" onclick = $("#menu-close").click(); >Salir</a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+    <!-- Here  -->
+    <header  class="header">
+      <!-- <div class="container-fluid" style="width:500px" > -->
+      {%block body%}
+
+      {%endblock%}
+    <!--  </div> -->
+    </header>
+
+
+    {%with messages= get_flashed_messages()%}
+        {%if messages%}
+          {%for message in messages%}
+          <!-- alert-warning-> red globe alert-info-> blue glob alert-succes->blue globs -->
+            <div class="alert alert-info alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span></button>
+                <!-- &times; means an x-->
+              {{message}}
+            </div>
+          {%endfor%}
+        {%endif%}
+      {%endwith%}
+
+
+    <script src="{{url_for('static',filename='js/jquery.js')}}"></script>
+    <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+    <script>
+      $("#menu-close").click(function(e) {
+          e.preventDefault();
+          $("#sidebar-wrapper").toggleClass("active");
+      });
+
+      // Opens the sidebar menu
+      $("#menu-toggle").click(function(e) {
+          e.preventDefault();
+          $("#sidebar-wrapper").toggleClass("active");
+      });
+    </script>
+
+</body>
+
+</html>

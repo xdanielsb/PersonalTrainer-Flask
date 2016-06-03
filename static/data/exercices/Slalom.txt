@@ -1,0 +1,7 @@
+1.Desplazarse en linea recta
+2.Levantar uno de los patines
+3.Pasar en zig zag por medio de los conos
+4.Camiar de pie 
+5.Repetir el ejercicio
+
+

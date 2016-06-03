@@ -1,0 +1,4 @@
+1.Pocision en dos apoyos estatica
+2.Realizar presion con el talon hacia el lado para lograr un mayor empuje 
+3.Realizar los mismo movimientos con a otra pierna
+4.Lograr un desplazarse hacia atras

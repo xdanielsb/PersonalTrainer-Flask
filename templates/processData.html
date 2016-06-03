@@ -1,0 +1,30 @@
+{%extends "header.html"%}
+
+{%block body%}
+<center>
+<div class="container-fluid" style="width:400px;">
+    <br><br>
+    <h2> Diagnostico</h2>
+    <table class="table table-hover  table-responsive table-bordered table-condensed">
+      <thead>
+        <tr>
+          <th>Atributo</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%if data%}
+        {% for datum in data%}
+          <tr>
+            <th scope="row">{{datum}}</th>
+            <td>{{ data[datum] }}</td>
+          </tr>
+        {% endfor%}
+        {%endif%}
+      </tbody>
+
+  </table>
+  <br><br><br><br><br><br>
+<div>
+</center>
+{%endblock%}
